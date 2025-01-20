@@ -1,0 +1,177 @@
+:root{
+    --negro: rgb(0,0,0);
+    --noche: rgb(156, 156, 156);
+    --dia:rgb(233, 233, 233);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 50px;
+}
+
+#contenedor {
+    border: 1px solid var(--negro);
+    max-width: 400px;
+    height: 500px;
+    background-color: var(--noche);
+    color: var(--negro);
+    border-radius: 2%;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.9);
+}
+
+#top{
+    width: auto;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*on Off*/
+#onOff{
+    border: 2px solid var(--negro);
+    cursor: pointer;
+    position: relative;
+    width: 100px;
+    height: 30px;
+    top: 10px;
+    left: 20px;
+    border-radius: 20px;
+    color: red;
+    background: linear-gradient(
+    to right,
+    red 50%,
+    red
+    );
+    color: black;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#move{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#on, #off{
+    margin: 5px;
+}
+
+/* mode */
+
+#mode{
+    position: relative;
+    left: -20px;
+    top: -5px;
+    border: 5px solid var(--negro);
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    background-color: yellow;
+} 
+
+/* Pantalla */
+#pantalla {
+    background-color: black;
+    border: 5px solid var(--negro);
+    margin: 20px 15px 15px;
+    width: 92%;
+    height: 60px;
+    font-weight: bold;
+    font-size: 2.5rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+/* Botones */
+#botones {
+    border: 5px solid var(--negro);
+    width: 92%;
+    margin: 15px;
+    height: 360px;
+
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5 , 1fr);
+    grid-gap: 1%;
+    grid-template-areas:
+        "btnR btnD btnM btnm"
+        "btn7 btn8 btn9 btnP"
+        "btn4 btn5 btn6 btnP"
+        "btn1 btn2 btn3 btnE"
+        "btn0 btn0 btno btnE";
+
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button.btnR{ grid-area: btnR; }
+button.btnD{ grid-area: btnD; }
+button.btnM{ grid-area: btnM; }
+button.btnm{ grid-area: btnm; }
+button.btn7{ grid-area: btn7; }
+button.btn8{ grid-area: btn8; }
+button.btn9{ grid-area: btn9; }
+button.btnP{ grid-area: btnP; grid-row: span 2; }
+button.btn4{ grid-area: btn4; }
+button.btn5{ grid-area: btn5; }
+button.btn6{ grid-area: btn6; }
+button.btn1{ grid-area: btn1; }
+button.btn2{ grid-area: btn2; }
+button.btn3{ grid-area: btn3; }
+button.btnE{ grid-area: btnE; grid-row: span 2; }
+button.btn0{ grid-area: btn0; grid-column: span 2; }
+button.btno{ grid-area: btno; }
+
+button{
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button[class^="btn"]{
+    border: 1px solid var(--negro);
+    border-radius: 10%;
+    text-align: center;
+    align-content: center;
+    margin: 5%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: rgb(240, 245, 245);
+}
+
+button[class^="btn"]:hover{
+    transform: scale(1) translate(3px, -3px);
+    background-color: rgba(0, 0, 0, 0.356);
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+button[class^="btn"]:active{
+    transform: translateY(-5px) scale(0.9);
+    transition: transform 0.1s ease-in-out;
+}
+
+button.btnR:hover{
+    background-color: rgba(255, 0, 0, 0.596);
+}
+
+button.btnE:hover{
+    background-color: rgba(0, 140, 255, 0.61);
+}
+
+button.btnD:hover, button.btnM:hover, button.btnm:hover, button.btnP:hover{
+    background-color: rgba(0, 255, 0, 0.555);
+}
